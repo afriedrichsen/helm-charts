@@ -1,0 +1,21 @@
+{{- if .Values.persistentVolumeClaims }}
+{{- range $name, $pvc := .Values.persistentVolumeClaims }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ $name }}
+spec:
+  storageClassName: {{ $pvc.storageClassName }}
+  accessModes:
+    {{- range $pvc.accessModes }}
+    - {{ . }}
+    {{- end }}
+  resources:
+    requests:
+      storage: {{ $pvc.resources.requests.storage }}
+  {{- if $pvc.volumeName }}
+  volumeName: {{ $pvc.volumeName }}
+  {{- end }}
+{{- end }}
+{{- end }}

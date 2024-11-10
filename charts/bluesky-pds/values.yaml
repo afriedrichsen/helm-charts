@@ -146,8 +146,35 @@ env: []
   #       name: app-config
   #       key: cache-ttl
 
+# PV/PVC
+# persistentVolumes:
+#   pds-data-volume:
+#     storageClassName: standard
+#     capacity: 10Gi
+#     accessModes:
+#       - ReadWriteOnce
+#     hostPath: /data/volumes/pds  # Optional: only if using hostPath
+#     nfs:                         # Optional: only if using NFS
+#       server: nfs.example.com
+#       path: /exports/data/pds
+#     # Add other volume source types as needed
+
+# persistentVolumeClaims:
+#   pds-data-config-pvc:
+#     storageClassName: standard
+#     accessModes:
+#       - ReadWriteOnce
+#     resources:
+#       requests:
+#         storage: 10Gi
+#     volumeName: pds-data-volume  # Optional: only if you want to bind to specific PV
+
+
 # Additional volumes on the output Deployment definition.
 volumes: []
+# - name: pds-data-config
+#   persistentVolumeClaim:
+#     claimName: pds-data-config-pvc
 # - name: foo
 #   secret:
 #     secretName: mysecret
@@ -155,9 +182,9 @@ volumes: []
 
 # Additional volumeMounts on the output Deployment definition.
 volumeMounts: []
-# - name: foo
-#   mountPath: "/etc/foo"
-#   readOnly: true
+# - name: pds-data-config
+#   mountPath: "/pds"
+#   readOnly: false
 
 nodeSelector: {}
 

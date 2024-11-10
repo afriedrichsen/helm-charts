@@ -1,0 +1,25 @@
+{{- if .Values.persistentVolumes }}
+{{- range $name, $pv := .Values.persistentVolumes }}
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ $name }}
+spec:
+  storageClassName: {{ $pv.storageClassName }}
+  capacity:
+    storage: {{ $pv.capacity }}
+  accessModes:
+    {{- range $pv.accessModes }}
+    - {{ . }}
+    {{- end }}
+  {{- if $pv.hostPath }}
+  hostPath:
+    path: {{ $pv.hostPath }}
+  {{- else if $pv.nfs }}
+  nfs:
+    server: {{ $pv.nfs.server }}
+    path: {{ $pv.nfs.path }}
+  {{- end }}
+{{- end }}
+{{- end }}
