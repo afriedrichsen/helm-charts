@@ -114,6 +114,38 @@ autoscaling:
   targetCPUUtilizationPercentage: 80
   # targetMemoryUtilizationPercentage: 80
 
+# Environment Variables
+env: []
+  # # Direct string values
+  # - name: API_VERSION
+  #   value: "v1"
+  # - name: DEBUG_MODE
+  #   value: "true"
+  
+  # # Secret references
+  # - name: DB_PASSWORD
+  #   valueFrom:
+  #     secretKeyRef:
+  #       name: app-secrets
+  #       key: db-password
+  # - name: API_KEY
+  #   valueFrom:
+  #     secretKeyRef:
+  #       name: app-secrets
+  #       key: api-key
+
+  # # ConfigMap references
+  # - name: DB_HOST
+  #   valueFrom:
+  #     configMapKeyRef:
+  #       name: app-config
+  #       key: db-host
+  # - name: CACHE_TTL
+  #   valueFrom:
+  #     configMapKeyRef:
+  #       name: app-config
+  #       key: cache-ttl
+
 # Additional volumes on the output Deployment definition.
 volumes: []
 # - name: foo
