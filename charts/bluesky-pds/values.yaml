@@ -33,7 +33,8 @@ serviceAccount:
 
 # This is for setting Kubernetes Annotations to a Pod.
 # For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
-podAnnotations: {}
+podAnnotations:
+  linkerd.io/inject: enabled
 # This is for setting Kubernetes Labels to a Pod.
 # For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 podLabels: {}
@@ -237,3 +238,12 @@ affinity: {}
 configuration:
   secretStore: "1password"
   secretPath: 'vaults/DevOps/items/bluesky_dev_keys'
+
+# Tunnel configuration
+tunnel:
+  enabled: true
+  name: "bluesky-pds"
+  hostname: "symmetricforests.online"
+  defaultBackendService: "http://web-service.default.svc.cluster.local:3000"
+  credentialBackend: "1password"
+  secretPath: "vaults/DevOps/items/cloudflared_bluesky_6fcaa612"
