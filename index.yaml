@@ -1,9 +1,20 @@
 apiVersion: v1
 entries:
+  bluesky-pds:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2024-11-11T01:06:37.463814-06:00"
+    description: A Helm chart for Kubernetes
+    digest: f14e6455715c4f2ffc0a2e89c67af6f115793b841d0eea727c8f2f703c0fc413
+    name: bluesky-pds
+    type: application
+    urls:
+    - https://afriedrichsen.github.io/helm-charts/library/bluesky-pds-0.1.0.tgz
+    version: 0.1.0
   netbox:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2024-11-10T13:37:10.246184-06:00"
+    created: "2024-11-11T01:06:37.464121-06:00"
     description: A Helm chart for Kubernetes
     digest: 5018cbe8d3f2d46c875b7f461a61fdba5061fc4aab0fac543ba1a20301eb07e9
     name: netbox
@@ -11,4 +22,4 @@ entries:
     urls:
     - https://afriedrichsen.github.io/helm-charts/library/netbox-0.1.0.tgz
     version: 0.1.0
-generated: "2024-11-10T13:37:10.245775-06:00"
+generated: "2024-11-11T01:06:37.463196-06:00"
