@@ -121,22 +121,22 @@ env:
 - name: PDS_JWT_SECRET
   valueFrom:
     secretKeyRef:
-      name: bluesky-pds-keys-dev
+      name: bluesky-pds-pds-keys
       key: PDS_JWT_SECRET
 - name: PDS_ADMIN_EMAIL
   valueFrom:
     secretKeyRef:
-      name: bluesky-pds-keys-dev
+      name: bluesky-pds-pds-keys
       key: PDS_ADMIN_EMAIL
 - name: PDS_ADMIN_PASSWORD
   valueFrom:
     secretKeyRef:
-      name: bluesky-pds-keys-dev
+      name: bluesky-pds-pds-keys
       key: PDS_ADMIN_PASSWORD
 - name: PDS_PLC_ROTATION_KEY_K256_PRIVATE_KEY_HEX
   valueFrom:
     secretKeyRef:
-      name: bluesky-pds-keys-dev
+      name: bluesky-pds-pds-keys
       key: PDS_PLC_ROTATION_KEY_K256_PRIVATE_KEY_HEX
 - name: PDS_DATA_DIRECTORY
   value: /pds
