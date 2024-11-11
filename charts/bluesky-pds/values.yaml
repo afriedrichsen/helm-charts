@@ -115,7 +115,49 @@ autoscaling:
   # targetMemoryUtilizationPercentage: 80
 
 # Environment Variables
-env: []
+env:
+- name: PDS_HOSTNAME
+  value: symmetricforests.online
+- name: PDS_JWT_SECRET
+  valueFrom:
+    secretKeyRef:
+      name: bluesky-pds-keys-dev
+      key: PDS_JWT_SECRET
+- name: PDS_ADMIN_EMAIL
+  valueFrom:
+    secretKeyRef:
+      name: bluesky-pds-keys-dev
+      key: PDS_ADMIN_EMAIL
+- name: PDS_ADMIN_PASSWORD
+  valueFrom:
+    secretKeyRef:
+      name: bluesky-pds-keys-dev
+      key: PDS_ADMIN_PASSWORD
+- name: PDS_PLC_ROTATION_KEY_K256_PRIVATE_KEY_HEX
+  valueFrom:
+    secretKeyRef:
+      name: bluesky-pds-keys-dev
+      key: PDS_PLC_ROTATION_KEY_K256_PRIVATE_KEY_HEX
+- name: PDS_DATA_DIRECTORY
+  value: /pds
+- name: PDS_BLOBSTORE_DISK_LOCATION
+  value: /pds/blocks
+- name: PDS_BLOB_UPLOAD_LIMIT
+  value: "52428800"
+- name: PDS_DID_PLC_URL
+  value: "https://plc.directory"
+- name: PDS_BSKY_APP_VIEW_URL
+  value: "https://api.bsky.app"
+- name: PDS_BSKY_APP_VIEW_DID
+  value: "did:web:api.bsky.app"
+- name: PDS_REPORT_SERVICE_URL
+  value: "https://mod.bsky.app"
+- name: PDS_REPORT_SERVICE_DID
+  value: "did:plc:ar7c4by46qjdydhdevvrndac"
+- name: PDS_CRAWLERS
+  value: "https://bsky.network"
+- name: LOG_ENABLED
+  value: "true"
   # # Direct string values
   # - name: API_VERSION
   #   value: "v1"
@@ -153,10 +195,10 @@ env: []
 #     capacity: 10Gi
 #     accessModes:
 #       - ReadWriteOnce
-#     hostPath: /data/volumes/pds  # Optional: only if using hostPath
-#     nfs:                         # Optional: only if using NFS
-#       server: nfs.example.com
-#       path: /exports/data/pds
+#     hostPath: /tmp/pds  # Optional: only if using hostPath
+#     # nfs:                         # Optional: only if using NFS
+#     #   server: nfs.example.com
+#     #   path: /exports/data/pds
 #     # Add other volume source types as needed
 
 # persistentVolumeClaims:
@@ -191,3 +233,7 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+configuration:
+  secretStore: "1password"
+  secretPath: 'vaults/DevOps/items/bluesky_dev_keys'
