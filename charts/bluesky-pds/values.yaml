@@ -7,11 +7,11 @@ replicaCount: 1
 
 # This sets the container image more information can be found here: https://kubernetes.io/docs/concepts/containers/images/
 image:
-  repository: nginx
+  repository: ghcr.io/bluesky-social/pds
   # This sets the pull policy for images.
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "0.4"
 
 # This is for the secretes for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: []
@@ -100,11 +100,11 @@ resources: {}
 livenessProbe:
   httpGet:
     path: /
-    port: http
+    port: http-app
 readinessProbe:
   httpGet:
     path: /
-    port: http
+    port: http-app
 
 # This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
 autoscaling:
@@ -189,44 +189,44 @@ env:
   #       key: cache-ttl
 
 # PV/PVC
-# persistentVolumes:
-#   pds-data-volume:
-#     storageClassName: standard
-#     capacity: 10Gi
-#     accessModes:
-#       - ReadWriteOnce
-#     hostPath: /tmp/pds  # Optional: only if using hostPath
-#     # nfs:                         # Optional: only if using NFS
-#     #   server: nfs.example.com
-#     #   path: /exports/data/pds
-#     # Add other volume source types as needed
+persistentVolumes:
+  pds-data-volume:
+    storageClassName: standard
+    capacity: 10Gi
+    accessModes:
+      - ReadWriteOnce
+    hostPath: /tmp/pds  # Optional: only if using hostPath
+    # nfs:                         # Optional: only if using NFS
+    #   server: nfs.example.com
+    #   path: /exports/data/pds
+    # Add other volume source types as needed
 
-# persistentVolumeClaims:
-#   pds-data-config-pvc:
-#     storageClassName: standard
-#     accessModes:
-#       - ReadWriteOnce
-#     resources:
-#       requests:
-#         storage: 10Gi
-#     volumeName: pds-data-volume  # Optional: only if you want to bind to specific PV
+persistentVolumeClaims:
+  pds-data-config-pvc:
+    storageClassName: standard
+    accessModes:
+      - ReadWriteOnce
+    resources:
+      requests:
+        storage: 10Gi
+    volumeName: pds-data-volume  # Optional: only if you want to bind to specific PV
 
 
 # Additional volumes on the output Deployment definition.
-volumes: []
-# - name: pds-data-config
-#   persistentVolumeClaim:
-#     claimName: pds-data-config-pvc
-# - name: foo
-#   secret:
-#     secretName: mysecret
-#     optional: false
+volumes:
+- name: pds-data-config
+  persistentVolumeClaim:
+    claimName: pds-data-config-pvc
+- name: foo
+  secret:
+    secretName: mysecret
+    optional: false
 
 # Additional volumeMounts on the output Deployment definition.
-volumeMounts: []
-# - name: pds-data-config
-#   mountPath: "/pds"
-#   readOnly: false
+volumeMounts:
+- name: pds-data-config
+  mountPath: "/pds"
+  readOnly: false
 
 nodeSelector: {}
 
