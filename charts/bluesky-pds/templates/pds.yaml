@@ -39,6 +39,26 @@ spec:
           env:
             - name: PDS_HOSTNAME
               value: {{ .Values.global.hostname }}
+            - name: PDS_JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "bluesky-pds.fullname" . }}-pds-keys
+                  key: PDS_JWT_SECRET
+            - name: PDS_ADMIN_EMAIL
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "bluesky-pds.fullname" . }}-pds-keys
+                  key: PDS_ADMIN_EMAIL
+            - name: PDS_ADMIN_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "bluesky-pds.fullname" . }}-pds-keys
+                  key: PDS_ADMIN_PASSWORD
+            - name: PDS_PLC_ROTATION_KEY_K256_PRIVATE_KEY_HEX
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "bluesky-pds.fullname" . }}-pds-keys
+                  key: PDS_PLC_ROTATION_KEY_K256_PRIVATE_KEY_HEX
             {{- range .Values.env }}
             - name: {{ .name }}
               {{- if .value }}

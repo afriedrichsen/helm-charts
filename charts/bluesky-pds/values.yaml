@@ -124,26 +124,26 @@ autoscaling:
 
 # Environment Variables
 env:
-- name: PDS_JWT_SECRET
-  valueFrom:
-    secretKeyRef:
-      name: bluesky-pds-pds-keys
-      key: PDS_JWT_SECRET
-- name: PDS_ADMIN_EMAIL
-  valueFrom:
-    secretKeyRef:
-      name: bluesky-pds-pds-keys
-      key: PDS_ADMIN_EMAIL
-- name: PDS_ADMIN_PASSWORD
-  valueFrom:
-    secretKeyRef:
-      name: bluesky-pds-pds-keys
-      key: PDS_ADMIN_PASSWORD
-- name: PDS_PLC_ROTATION_KEY_K256_PRIVATE_KEY_HEX
-  valueFrom:
-    secretKeyRef:
-      name: bluesky-pds-pds-keys
-      key: PDS_PLC_ROTATION_KEY_K256_PRIVATE_KEY_HEX
+# - name: PDS_JWT_SECRET
+#   valueFrom:
+#     secretKeyRef:
+#       name: bluesky-pds-pds-keys
+#       key: PDS_JWT_SECRET
+# - name: PDS_ADMIN_EMAIL
+#   valueFrom:
+#     secretKeyRef:
+#       name: bluesky-pds-pds-keys
+#       key: PDS_ADMIN_EMAIL
+# - name: PDS_ADMIN_PASSWORD
+#   valueFrom:
+#     secretKeyRef:
+#       name: bluesky-pds-pds-keys
+#       key: PDS_ADMIN_PASSWORD
+# - name: PDS_PLC_ROTATION_KEY_K256_PRIVATE_KEY_HEX
+#   valueFrom:
+#     secretKeyRef:
+#       name: bluesky-pds-pds-keys
+#       key: PDS_PLC_ROTATION_KEY_K256_PRIVATE_KEY_HEX
 - name: PDS_DATA_DIRECTORY
   value: /pds
 - name: PDS_BLOBSTORE_DISK_LOCATION
@@ -229,8 +229,8 @@ configuration:
 
 # Tunnel configuration
 tunnel:
-  enabled: true
+  enabled: false
   name: "bluesky-pds"
-  defaultBackendService: "http://bluesky-pds.bluesky-c5b4fe95.svc.cluster.local:3000"
+  defaultBackendService: "http://bluesky-pds.default.svc.cluster.local:3000"
   credentialBackend: "1password"
   secretPath: "vaults/DevOps/items/cloudflared-creds-df6f90fd-af5f-4b2a-8a80-b738d82690ab"
