@@ -37,6 +37,8 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
+            - name: PDS_HOSTNAME
+              value: {{ .Values.global.hostname }}
             {{- range .Values.env }}
             - name: {{ .name }}
               {{- if .value }}

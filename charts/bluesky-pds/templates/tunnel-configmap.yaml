@@ -28,7 +28,7 @@ data:
     # E.g. `cloudflared tunnel route dns example-tunnel tunnel.example.com`.
     ingress:
     # The first rule proxies traffic to the httpbin sample Service defined in app.yaml
-    - hostname: {{ .Values.tunnel.hostname }}
+    - hostname: {{ .Values.global.hostname }}
       service:  {{ .Values.tunnel.defaultBackendService }}
     # This rule sends traffic to the built-in hello-world HTTP server. This can help debug connectivity
     # issues. If hello.example.com resolves and tunnel.example.com does not, then the problem is
