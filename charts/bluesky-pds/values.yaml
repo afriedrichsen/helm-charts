@@ -223,10 +223,6 @@ tolerations: []
 
 affinity: {}
 
-configuration:
-  secretStore: "1password"
-  secretPath: 'vaults/DevOps/items/bluesky_dev_keys'
-
 # Tunnel configuration
 tunnel:
   enabled: false
