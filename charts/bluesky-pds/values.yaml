@@ -193,7 +193,7 @@ env:
 persistentVolumes:
   pds-data-volume:
     storageClassName: standard
-    capacity: 10Gi
+    capacity: 20Gi
     accessModes:
       - ReadWriteOnce
     hostPath: /tmp/pds  # Optional: only if using hostPath
@@ -209,7 +209,7 @@ persistentVolumeClaims:
       - ReadWriteOnce
     resources:
       requests:
-        storage: 10Gi
+        storage: 20Gi
     volumeName: pds-data-volume  # Optional: only if you want to bind to specific PV
 
 
