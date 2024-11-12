@@ -124,8 +124,6 @@ autoscaling:
 
 # Environment Variables
 env:
-- name: PDS_HOSTNAME
-  value: symmetricforests.online
 - name: PDS_JWT_SECRET
   valueFrom:
     secretKeyRef:
@@ -166,23 +164,6 @@ env:
   value: "https://bsky.network"
 - name: LOG_ENABLED
   value: "true"
-  # # Direct string values
-  # - name: API_VERSION
-  #   value: "v1"
-  # - name: DEBUG_MODE
-  #   value: "true"
-  
-  # # Secret references
-  # - name: DB_PASSWORD
-  #   valueFrom:
-  #     secretKeyRef:
-  #       name: app-secrets
-  #       key: db-password
-  # - name: API_KEY
-  #   valueFrom:
-  #     secretKeyRef:
-  #       name: app-secrets
-  #       key: api-key
 
   # # ConfigMap references
   # - name: DB_HOST
@@ -205,9 +186,9 @@ persistentVolumes:
       - ReadWriteOnce
     hostPath: /tmp/pds  # Optional: only if using hostPath
     # nfs:                         # Optional: only if using NFS
-    #   server: nfs.example.com
-    #   path: /exports/data/pds
-    # Add other volume source types as needed
+    #   server: 1.2.3.4
+    #   path: /nfs/app_data/bluesky-pds/local-instance/
+    # # Add other volume source types as needed
 
 persistentVolumeClaims:
   pds-data-config-pvc:
@@ -225,10 +206,10 @@ volumes:
 - name: pds-data-config
   persistentVolumeClaim:
     claimName: pds-data-config-pvc
-- name: foo
-  secret:
-    secretName: mysecret
-    optional: false
+# - name: foo
+#   secret:
+#     secretName: mysecret
+#     optional: false
 
 # Additional volumeMounts on the output Deployment definition.
 volumeMounts:
@@ -250,7 +231,6 @@ configuration:
 tunnel:
   enabled: true
   name: "bluesky-pds"
-  hostname: "symmetricforests.online"
-  defaultBackendService: "http://web-service.default.svc.cluster.local:3000"
+  defaultBackendService: "http://bluesky-pds.bluesky-c5b4fe95.svc.cluster.local:3000"
   credentialBackend: "1password"
-  secretPath: "vaults/DevOps/items/cloudflared_bluesky_6fcaa612"
+  secretPath: "vaults/DevOps/items/cloudflared-creds-df6f90fd-af5f-4b2a-8a80-b738d82690ab"
