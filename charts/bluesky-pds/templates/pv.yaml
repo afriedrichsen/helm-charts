@@ -23,3 +23,26 @@ spec:
   {{- end }}
 {{- end }}
 {{- end }}
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ include "bluesky-pds.fullname" . }}-data-volume
+spec:
+  storageClassName: {{ .Values.dataVolumeConfiguration.storageClassName }}
+  capacity:
+    storage: {{ .Values.dataVolumeConfiguration.size }}
+  accessModes:
+    {{- range .Values.dataVolumeConfiguration.accessModes }}
+    - {{ . }}
+    {{- end }}
+  {{- if .Values.dataVolumeConfiguration.hostPath }}
+  hostPath:
+    path: {{ .Values.dataVolumeConfiguration.hostPath }}
+  {{- else if .Values.dataVolumeConfiguration.nfs }}
+  nfs:
+    server: {{ .Values.dataVolumeConfiguration.nfs.server }}
+    path: {{ .Values.dataVolumeConfiguration.nfs.path }}
+  {{- end }}
+{{- end }}
+{{- end }}

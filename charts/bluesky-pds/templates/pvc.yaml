@@ -19,3 +19,18 @@ spec:
   {{- end }}
 {{- end }}
 {{- end }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "bluesky-pds.fullname" . }}-data-config-pvc
+spec:
+  storageClassName: {{ .Values.dataVolumeConfiguration.storageClassName }}
+  accessModes:
+    {{- range .Values.dataVolumeConfiguration.accessModes }}
+    - {{ . }}
+    {{- end }}
+  resources:
+    requests:
+      storage: {{ .Values.dataVolumeConfiguration.storageRequest }}
+  volumeName: {{ $pvc.volumeName }}
