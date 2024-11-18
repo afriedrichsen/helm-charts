@@ -33,4 +33,4 @@ spec:
   resources:
     requests:
       storage: {{ .Values.dataVolumeConfiguration.storageRequest }}
-  volumeName: {{ $pvc.volumeName }}
+  volumeName: {{ include "bluesky-pds.fullname" . }}-data-volume

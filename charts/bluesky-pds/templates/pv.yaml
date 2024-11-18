@@ -44,5 +44,3 @@ spec:
     server: {{ .Values.dataVolumeConfiguration.nfs.server }}
     path: {{ .Values.dataVolumeConfiguration.nfs.path }}
   {{- end }}
-{{- end }}
-{{- end }}
