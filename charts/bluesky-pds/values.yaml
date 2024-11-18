@@ -178,6 +178,7 @@ env:
   #       key: cache-ttl
 
 # PV/PVC
+# Primary data volume configuration.
 dataVolumeConfiguration:
   enabled: true
   storageClassName: standard
