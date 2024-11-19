@@ -121,3 +121,7 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+credentials:
+  backend: "1password"
+  secretPath: "vault/DevOps/tailscale-auth-k8s"
