@@ -37,9 +37,11 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - name: http
-              containerPort: {{ .Values.service.port }}
-              protocol: TCP
+            {{- range .Values.ports }}
+            - name: {{ .name }}
+              protocol: {{ .protocol }}
+              containerPort: {{ .containerPort }}
+            {{- end }}
           livenessProbe:
             {{- toYaml .Values.livenessProbe | nindent 12 }}
           readinessProbe:
@@ -50,6 +52,12 @@ spec:
                 secretKeyRef:
                   name: {{ include "tailscale.fullname" . }}-auth
                   key: TS_AUTHKEY
+            - name: TS_ROUTES
+              value: "{{ .Values.routes }}"
+            - name: TS_EXTRA_ARGS
+              value: "{{ .Values.extraArgs }}"
+            - name: TS_USERSPACE
+              value: "{{ .Values.userspace }}"
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- with .Values.volumeMounts }}
