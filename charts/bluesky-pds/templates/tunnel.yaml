@@ -11,12 +11,14 @@ spec:
   template:
     metadata:
       labels:
-        app: cloudflared
+        {{- include "bluesky-pds.labels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+  {{- with .Values.tunnelPodAnnotations }}
       annotations:
-        linkerd.io/inject: enabled
-        prometheus.io/scrape: 'true'
-        prometheus.io/path: '/metrics'
-        prometheus.io/port: '2000'
+        {{- toYaml . | nindent 8 }}
+  {{- end }}
     spec:
       containers:
         - name: cloudflared

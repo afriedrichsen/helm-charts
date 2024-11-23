@@ -45,6 +45,16 @@ podAnnotations: {}
 # For more information checkout: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
 podLabels: {}
 
+
+tunnelPodAnnotations: {}
+  # linkerd.io/inject: enabled
+  # prometheus.io/scrape: 'true'
+  # prometheus.io/path: '/metrics'
+  # prometheus.io/port: '2000'
+
+tunnelPodLabels:
+  app: cloudflared
+
 podSecurityContext: {}
   # fsGroup: 2000
 
