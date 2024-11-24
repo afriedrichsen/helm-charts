@@ -11,6 +11,7 @@ spec:
   template:
     metadata:
       labels:
+        app: cloudflared
         {{- include "bluesky-pds.labels" . | nindent 8 }}
         {{- with .Values.podLabels }}
         {{- toYaml . | nindent 8 }}
