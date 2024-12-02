@@ -7,11 +7,11 @@ replicaCount: 1
 
 # This sets the container image more information can be found here: https://kubernetes.io/docs/concepts/containers/images/
 image:
-  repository: nginx
+  repository: homebridge/homebridge
   # This sets the pull policy for images.
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "latest"
 
 # This is for the secretes for pulling an image from a private repository more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
 imagePullSecrets: []
@@ -54,7 +54,32 @@ service:
   # This sets the service type more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
   type: ClusterIP
   # This sets the ports more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#field-spec-ports
-  port: 80
+  # port: 80
+
+dataVolumeConfiguration:
+  enabled: true
+  storageClassName: standard
+  accessModes:
+    - ReadWriteOnce
+  size: 5Gi
+  storageRequest: 5Gi
+  mountPath: "/homebridge"
+  hostPath: /tmp/homebridge  # Optional: only if using hostPath
+  # nfs:                         # Optional: only if using NFS
+  #   server: 1.2.3.4
+  #   path: /nfs/app_data/bluesky-pds/local-instance/
+
+ports:
+  - name: http
+    protocol: TCP
+    containerPort: 8581
+
+# Environment Variables
+env:
+- name: Owner
+  value: afriedrichsen
+- name: TARGET_HOME
+  value: friedrichsen-home
 
 # This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
 ingress:
@@ -86,14 +111,14 @@ resources: {}
   #   memory: 128Mi
 
 # This is to setup the liveness and readiness probes more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
-livenessProbe:
-  httpGet:
-    path: /
-    port: http
-readinessProbe:
-  httpGet:
-    path: /
-    port: http
+livenessProbe: null
+#   httpGet:
+#     path: /
+#     port: http
+readinessProbe: null
+#   httpGet:
+#     path: /
+#     port: http
 
 # This section is for setting up autoscaling more information can be found here: https://kubernetes.io/docs/concepts/workloads/autoscaling/
 autoscaling:
