@@ -251,6 +251,10 @@ affinity: {}
 tunnel:
   enabled: false
   name: "bluesky-pds"
+  image:
+    repository: cloudflare/cloudflared
+    pullPolicy: IfNotPresent
+    tag: "2025.7.0"
   defaultBackendService: "http://bluesky-pds.default.svc.cluster.local:3000"
   credentialBackend: "1password"
   secretPath: "vaults/DevOps/items/cloudflared-creds-df6f90fd-af5f-4b2a-8a80-b738d82690ab"

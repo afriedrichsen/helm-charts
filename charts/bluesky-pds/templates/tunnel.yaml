@@ -18,8 +18,8 @@ spec:
   {{- end }}
     spec:
       containers:
-        - name: cloudflared
-          image: cloudflare/cloudflared:2025.4.0
+        - name: cloudflared"
+          image: "{{.Values.tunnel.image.repository}}:{{.Values.tunnel.image.tag}}"
           args:
             - tunnel
             # Points cloudflared to the config file, which configures what
