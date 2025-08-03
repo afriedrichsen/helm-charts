@@ -1,6 +1,6 @@
 baseURL: "https://afriedrichsen.github.io/helm-charts/"
 languageCode: en-us
-title: My New Hugo Site
+title: Helm Charts
 theme: ["PaperMod"]
 caches:
   images:
