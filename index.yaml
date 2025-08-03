@@ -3,7 +3,17 @@ entries:
   bluesky-pds:
   - apiVersion: v2
     appVersion: 2.1.0
-    created: "2025-08-02T22:48:24.980831-05:00"
+    created: "2025-08-02T22:58:54.575893-05:00"
+    description: Helm chart to deploy BlueSky Social PDS server
+    digest: 75ece18c98dd496562b33ca2a68100134ccc78d43a895f44589c1bbe8aed9257
+    name: bluesky-pds
+    type: application
+    urls:
+    - https://afriedrichsen.github.io/helm-charts/library/bluesky-pds-1.5.1.tgz
+    version: 1.5.1
+  - apiVersion: v2
+    appVersion: 2.1.0
+    created: "2025-08-02T22:58:54.575288-05:00"
     description: Helm chart to deploy BlueSky Social PDS server
     digest: bb13cb63ac35401df8dc7813ce48cd1b8e493f367d97d9ec5e76386200495595
     name: bluesky-pds
@@ -13,7 +23,7 @@ entries:
     version: 1.5.0
   - apiVersion: v2
     appVersion: 2.0.2
-    created: "2025-08-02T22:48:24.979917-05:00"
+    created: "2025-08-02T22:58:54.574684-05:00"
     description: Helm chart to deploy BlueSky Social PDS server
     digest: 89c78d862e80930cf56119acf7d1cc6bf1d94b01f30e04adf35065145ef59a7c
     name: bluesky-pds
@@ -23,7 +33,7 @@ entries:
     version: 1.4.4
   - apiVersion: v2
     appVersion: 2.0.1
-    created: "2025-08-02T22:48:24.979407-05:00"
+    created: "2025-08-02T22:58:54.574256-05:00"
     description: Helm chart to deploy BlueSky Social PDS server
     digest: 1bb9dfc52bd7895adfeb736d651fec98a3460cfa53d19c6f97144f30303f1bcd
     name: bluesky-pds
@@ -33,7 +43,7 @@ entries:
     version: 1.4.3
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2025-08-02T22:48:24.97888-05:00"
+    created: "2025-08-02T22:58:54.573724-05:00"
     description: Helm chart to deploy BlueSky Social PDS server
     digest: 6017580879af25c5a4a2432e4f2ea196a00ee13aebb9b9534997459e1ba81fad
     name: bluesky-pds
@@ -43,7 +53,7 @@ entries:
     version: 1.4.2
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2025-08-02T22:48:24.978369-05:00"
+    created: "2025-08-02T22:58:54.573329-05:00"
     description: Helm chart to deploy BlueSky Social PDS server
     digest: a46ad650c449218039d1bdd4b1264dd467ec9be12869fb948d8697a57a752d83
     name: bluesky-pds
@@ -53,7 +63,7 @@ entries:
     version: 1.4.0
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2025-08-02T22:48:24.977864-05:00"
+    created: "2025-08-02T22:58:54.572932-05:00"
     description: Helm chart to deploy BlueSky Social PDS server
     digest: 952e166a6e2da0cef242d05f6d317bf3a1cda2ade32cfdadf59a0df287d12c77
     name: bluesky-pds
@@ -63,7 +73,7 @@ entries:
     version: 1.3.1
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2025-08-02T22:48:24.977341-05:00"
+    created: "2025-08-02T22:58:54.572544-05:00"
     description: Helm chart to deploy BlueSky Social PDS server
     digest: 1413855bb62d13b168b4d5167f5c7000fd0eb262e5ba237ff47e22b37a6258a8
     name: bluesky-pds
@@ -73,7 +83,7 @@ entries:
     version: 1.3.0
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2025-08-02T22:48:24.976832-05:00"
+    created: "2025-08-02T22:58:54.572152-05:00"
     description: Helm chart to deploy BlueSky Social PDS server
     digest: ed80897ec9bb9f55e09d69ce2cf9407de20a0fd279baf1872fefe6822e9a4462
     name: bluesky-pds
@@ -83,7 +93,7 @@ entries:
     version: 1.2.7
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2025-08-02T22:48:24.976297-05:00"
+    created: "2025-08-02T22:58:54.571743-05:00"
     description: Helm chart to deploy BlueSky Social PDS server
     digest: 349f2dcc825133b66f4e58952f52f3f94532b5b0e149e1cfb7acb2bcd35989b2
     name: bluesky-pds
@@ -93,7 +103,7 @@ entries:
     version: 1.2.6
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2025-08-02T22:48:24.975766-05:00"
+    created: "2025-08-02T22:58:54.571332-05:00"
     description: Helm chart to deploy BlueSky Social PDS server
     digest: ed8a42db18c12123718f8b6276b4a40d9a76c2ad19777e538df45644bb4bbb19
     name: bluesky-pds
@@ -103,7 +113,7 @@ entries:
     version: 1.2.5
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2025-08-02T22:48:24.974809-05:00"
+    created: "2025-08-02T22:58:54.570522-05:00"
     description: Helm chart to deploy BlueSky Social PDS server
     digest: fa4fea7543a5ed1723802b426b9f26d53104ed6958a534b87aae60f52d9a4e08
     name: bluesky-pds
@@ -113,7 +123,7 @@ entries:
     version: 1.2.0
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2025-08-02T22:48:24.974297-05:00"
+    created: "2025-08-02T22:58:54.570109-05:00"
     description: Helm chart to deploy BlueSky Social PDS server
     digest: eedeee6165b0ce1f00291d076909e84d7e580a573e8d69a30c9a2fff15d7293c
     name: bluesky-pds
@@ -123,7 +133,7 @@ entries:
     version: 1.1.1
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2025-08-02T22:48:24.973785-05:00"
+    created: "2025-08-02T22:58:54.569709-05:00"
     description: A Helm chart for Kubernetes
     digest: 85439e3b3f171049a9cf254ce8b13a0990f6d2398b7b7fec6314a1122fef3910
     name: bluesky-pds
@@ -133,7 +143,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-08-02T22:48:24.97323-05:00"
+    created: "2025-08-02T22:58:54.569304-05:00"
     description: A Helm chart for Kubernetes
     digest: f14e6455715c4f2ffc0a2e89c67af6f115793b841d0eea727c8f2f703c0fc413
     name: bluesky-pds
@@ -144,7 +154,7 @@ entries:
   homebridge:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-08-02T22:48:24.98194-05:00"
+    created: "2025-08-02T22:58:54.576695-05:00"
     description: A Helm chart for Kubernetes
     digest: 5d29be6b3379fdc54a53c162d04a684dbcbac210331554b60b3ea92e58785050
     name: homebridge
@@ -154,7 +164,7 @@ entries:
     version: 1.1.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-08-02T22:48:24.981571-05:00"
+    created: "2025-08-02T22:58:54.576433-05:00"
     description: A Helm chart for Kubernetes
     digest: 2bb8e68d20914977473f3c307a5b23871187fe8c3e784edd8d673edf89b9da1b
     name: homebridge
@@ -164,7 +174,7 @@ entries:
     version: 1.0.0
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2025-08-02T22:48:24.981212-05:00"
+    created: "2025-08-02T22:58:54.576168-05:00"
     description: A Helm chart for Kubernetes
     digest: 7b6b30022d3b335c5dded92d5a94228a3a718a9eecf1e9243d79f501984d2ecc
     name: homebridge
@@ -175,7 +185,7 @@ entries:
   netbox:
   - apiVersion: v2
     appVersion: 2.0.0
-    created: "2025-08-02T22:48:24.982544-05:00"
+    created: "2025-08-02T22:58:54.577147-05:00"
     description: A Helm chart for Kubernetes
     digest: 740633c942945c2ff62bc1fd72fbbfc44e8eedf071d7d4b702442f42794dbf2b
     name: netbox
@@ -185,7 +195,7 @@ entries:
     version: 1.2.0
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-08-02T22:48:24.982241-05:00"
+    created: "2025-08-02T22:58:54.576926-05:00"
     description: A Helm chart for Kubernetes
     digest: 5018cbe8d3f2d46c875b7f461a61fdba5061fc4aab0fac543ba1a20301eb07e9
     name: netbox
@@ -193,4 +203,4 @@ entries:
     urls:
     - https://afriedrichsen.github.io/helm-charts/library/netbox-0.1.0.tgz
     version: 0.1.0
-generated: "2025-08-02T22:48:24.972465-05:00"
+generated: "2025-08-02T22:58:54.568827-05:00"
