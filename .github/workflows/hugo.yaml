@@ -12,7 +12,7 @@ on:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -92,7 +92,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
+        with:
+          ref: gh-pages
       - name: Deploy Hugo site and preserve Helm charts
         uses: peaceiris/actions-gh-pages@v3
         with:
