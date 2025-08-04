@@ -54,3 +54,5 @@ jobs:
           publish_dir: ./public
           keep_files: true
           force_orphan: false
+          user_name: 'Alex Friedrichsen (automated deploy)'
+          user_email: 'afriedrichsen@me.com'
