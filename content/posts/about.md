@@ -7,3 +7,11 @@ title: 'About'
 ## What is this?
 
 This page is a collection of great Helm charts
+
+## Can I use?
+
+Yes, but it's limited
+
+## Can I contribute
+
+Eh, maybe.
