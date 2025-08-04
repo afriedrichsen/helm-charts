@@ -4,3 +4,4 @@
 
 # Main branch only: ignore helm release bundles. These should be committed to gh-pages branch by automation.
 **/*.tgz/
+**/public/
