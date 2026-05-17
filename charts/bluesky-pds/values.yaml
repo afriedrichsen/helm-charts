@@ -200,7 +200,7 @@ dataVolumeConfiguration:
   # nfs:                         # Optional: only if using NFS
   #   server: 1.2.3.4
   #   path: /nfs/app_data/bluesky-pds/local-instance/
-   
+
 # Additional persistent volumes and PVCs.
 persistentVolumes: []
 # - name: pds-data-volume2
